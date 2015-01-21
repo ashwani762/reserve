@@ -1,0 +1,653 @@
+//****************************************************************
+//				Header Files
+//****************************************************************
+#include<fstream.h>
+#include<iostream.h>       //FOR COUT,CIN,FLOAT,INT
+#include<conio.h>          //FOR GETCH,CLRSCR,GOTOXY
+#include<iomanip.h>        //FOR ENDL
+#include<string.h>         //FOR STRCMP
+#include<stdio.h>          //FOR GETS,PUTS
+#include<dos.h>            //FOR DELAY
+#include<process.h>        //For EXIT
+
+//****************************************************************
+//				Global Variables
+//****************************************************************
+
+ int x=14;
+ int y=14;
+ int ch;
+ int a;
+
+//****************************************************************
+//				Function Declaration
+//****************************************************************
+
+void ichos(void);
+void dchos(void);
+void wel(void);
+void option(void);
+int cho();
+void table(void);
+
+
+//**********************************************************
+//			    Main Classes
+//**********************************************************
+
+class airport{
+	     private:
+	     char name[30];
+	     char sex[10];
+	     char dest[30];
+	     char meal[10];
+	     char* airways;
+	     char* flno;
+
+	     public:
+	     char a,b,c,d,e,f,g ;
+	     int age;
+	     int fare;
+	     int time;
+
+	     void input();
+	     void calculate();
+	     void dcalculate();
+	     void show();
+	     void output();
+	     char *return_name();
+ };
+
+//***********************************************************
+//			Classes END
+//***********************************************************
+
+//***********************************************************
+//			Member FUnction Declaration
+//***********************************************************
+char * airport::return_name()
+	{
+		return name;
+			      }
+
+   void airport::input()
+  {
+   cout<<endl<<endl<<endl<<endl;
+   cout<<'\t';
+   cout<<"KINDLY ENTER YOUR";cout<<endl;
+   cout<<'\t';
+   cout<<"================= \n\n";
+   cout<<"             "<<"NAME:";gets(name);
+   cout<<"             "<<"-----" <<endl;
+   cout<<"             "<<"AGE:";cin>>age;
+   cout<<"             "<<"----"<<endl;
+   cout<<"             "<<"SEX :";gets(sex);
+   cout<<"             "<<"---";cout<<endl;
+
+   gotoxy(x,y); cputs("DATE:");
+   gotoxy(x+7,y); cputs("/"); gotoxy(x+10,y);cputs("/");gotoxy(x+5,y);
+   a=getche();
+   b=getche();
+
+   gotoxy(x+8,y);
+   c=getche();
+   d=getche();
+   gotoxy(x+11,y);
+   e=getche();
+   f=getche();
+   cout<<endl<<endl;
+
+   cout<<"             "<<"DESTINATION:";gets(dest);
+   cout<<"             "<<"------------"<<endl;
+   cout<<"             "; cout<<"MEAL(VEG OR NON-VEG):";gets(meal);
+   cout<<"             "; cout<<"---------------------\n\n";
+   int i;
+   for(i=0;i<=239;i++)
+   {
+   putch(char(186));}
+   cout<<endl;
+   cout<<"         "<<"PRESS ANY KEY TO CONTINUE";
+	 }   // END OF INPUT()
+
+ void airport::calculate()
+ {
+  if(!strcmp(dest,"sydney"))
+  {
+  fare=10000;
+  time=1330;
+  flno="AA-1440";
+  airways="AUSTRALIAN AIR";
+     }
+
+  else if(!strcmp(dest,"london"))
+ {
+  fare= 20000;
+  time= 2210;
+  flno="BA-14";
+  airways="BRITISH AIRWAYS";
+  }
+
+  else if(!strcmp(dest,"bangkok"))
+ {
+  fare=15000;
+  time= 2330;
+  flno="TG-87";
+  airways="THAI AIRWAYS";
+  }
+
+ else if(!strcmp(dest,"frankfurt"))
+ {
+  fare=8000;
+  time=1330;
+  flno="LF-285";
+  airways="LUFTHANSA";
+  }
+
+ else if(!strcmp(dest,"paris"))
+ {
+  fare=11000;
+  time=2300;
+  flno="AF-267";
+  airways="AIR-FRANCE";
+  }
+
+ else if(!strcmp(dest,"tokyo"))
+ {
+  fare=15000;
+  time=2210;
+  flno="JA4200";
+  airways="JAPANESE AIR";
+  }
+
+  else if(!strcmp(dest,"moscow"))
+ {
+  fare=18000;
+  time= 1240;
+  flno="AI2LATE";
+  airways=" AIR-INDIA";
+  }
+
+ else if(!strcmp(dest,"rome"))
+ {
+  fare= 28000;
+  time= 1740;
+  flno= "AI3LATE";
+  airways="AIR-INDIA";
+  }
+
+ else if(!strcmp(dest,"atlanta"))
+  {
+  fare= 15000;
+  time= 1150;
+  flno= "UA3456";
+  airways="UNITED AIRWAYS";
+   }
+
+ else if(!strcmp(dest,"newyork"))
+ {
+  fare=18000;
+  time= 2234;
+  flno= "UA3465";
+  airways="UNITED AIRWAYS";
+   }
+
+}  //END OF CALCULATE
+
+   void airport::dcalculate()
+  {
+  if(!strcmp(dest,"delhi"))
+ {
+  fare=10000;
+  time=1330;
+  flno="dl-1440";
+  airways="INDIA-AIRLINES";
+    }
+
+  else if(!strcmp(dest,"mumbai"))
+ {
+  fare= 20000;
+  time= 2210;
+  flno="MU-14";
+  airways="KINGDOM";
+  }
+
+  else if(!strcmp(dest,"chennai"))
+ {
+  fare=15000;
+  time= 2330;
+  flno="CH-87";
+  airways="FRRANFIN";
+   }
+
+ else if(!strcmp(dest,"kolkata"))
+ {
+  fare=8000;
+  time=1330;
+  flno="KL-285";
+  airways="INDIA-AIRLINES";
+   }
+
+ else if(!strcmp(dest,"shimla"))
+ {
+  fare=11000;
+  time=2300;
+  flno="SH-267";
+  airways="DECCAN";
+   }
+
+ else if(!strcmp(dest,"jammu"))
+ {
+  fare=15000;
+  time=2210;
+  flno="JA4200";
+  airways="INDIA-AIRLINES";
+   }
+
+ else if(!strcmp(dest,"bangalore"))
+ {
+  fare=18000;
+  time= 1240;
+  flno="BA2LARE";
+  airways="KINGDOM";
+  }
+
+ else if(!strcmp(dest,"goa"))
+ {
+  fare= 28000;
+  time= 1740;
+  flno= "GO3LATE";
+  airways="JET-AIRWAYS";
+  }
+
+ else if(!strcmp(dest,"dispur"))
+  {
+  fare= 15000;
+  time= 1150;
+  flno= "DI3456";
+  airways="INDIA-AIRLINES";
+   }
+
+ else if(!strcmp(dest,"bhopal"))
+ {
+  fare=18000;
+  time= 2234;
+  flno= "BH3465";
+  airways="DECCAN";
+   }
+
+}  //END OF DCALCULATE
+
+ void airport::show()
+{
+  clrscr();  int i;
+  for(i=0;i<=159;i++)
+  putch(char(186));
+  cout<<endl;
+  int cd=2;
+  for(i=0;i<=21;i++)
+  {
+   putch(char(186));
+   gotoxy(1,cd);
+   cd++;
+   }
+  for(i=0;i<=159;i++)
+  putch(char(186));
+  int ab=2;
+  gotoxy(80,ab);
+  for(i=0;i<=21;i++)
+  {
+   putch(char(186));
+   gotoxy(80,ab) ;
+   ab++;
+   }
+   gotoxy(30,4);
+   cout<<airways;
+   gotoxy(6,5);
+   cout<<"NAME: ";cout<<name;
+   gotoxy(6,7);
+   cout<<"AGE: ";cout<<age; gotoxy(25,7); cout<<"SEX:";cout<<sex;
+   gotoxy(6,9);
+   cout<<"DESTINATION:";cout<<dest;
+   gotoxy(30,9);
+   cout<<"FARE>RS."<<fare;
+   gotoxy(6,11);
+   cout<<"DATE:";cout<<a<<b<<"\\"<<c<<d<<"\\"<<e<<f;
+   gotoxy(6,13);
+   cout<<"DEPARTURE TIME: ";cout<<time;
+   gotoxy(6,15);
+   cout<<"MEAL: "; cout<<meal;
+   gotoxy(27,17);
+   cout<<"INSTRUCTIONS";
+   gotoxy(11,18);
+   cout<<"1) "<<" EXPLOSIVES NOT ALLOWED   ";gotoxy(11,19);
+   cout<<"2) "<<" NO SMOKING  ";gotoxy(11,20);
+   cout<<"3) "<<" DO NOT DISPOSE OF YOUR TICKET  ";gotoxy(25,22);
+   cout<<"HAVE A NICE JOURNEY";
+   getch();
+   clrscr();
+    }  //END OF SHOW
+
+
+ void airport::output()
+{
+  cout<<setw(15)<<name<<setw(15)<<dest<<setw(8)<<""<<a<<b<<"\\"<<c<<d<<"\\"<<e<<f<<setw(12)<<flno<<setw(6)<<time<<endl;
+  getch();
+
+    } // END OF OUTPUT
+
+//****************************************************************
+//			Main Functions
+//****************************************************************
+
+void main()
+{
+	char cha;
+	clrscr();
+	airport obj;
+	fstream nfil,fil;
+	wel();
+	clrscr();
+	int f=1;
+
+	do
+	{
+ option();
+	a=cho();
+	switch(a)
+	{
+	case 1:
+		 {clrscr();
+
+		   clrscr();
+		    dchos();
+		    clrscr();
+		    fstream fil("book.bat",ios::out|ios::binary|ios::app);
+		    obj.input();
+		    obj.dcalculate();
+		    fil.write((char*)&obj,sizeof(obj));
+		    cout<<endl;
+		    fil.close();
+		    obj.show();
+		    break;
+
+		   } //end of case(1)
+
+	case 2:    {
+		clrscr();
+
+		     clrscr();
+		     ichos();
+		     clrscr();
+		     fstream fil("book.bat",ios::out|ios::binary|ios::app);
+		     obj.input();
+		     obj.calculate();
+		     fil.write((char*)&obj,sizeof(obj));
+		     cout<<endl;
+		     fil.close();
+		     obj.show();
+		     break;
+		   } //end of case(2)
+
+	case 3:    {
+		clrscr();
+
+		     clrscr();
+		     char nam[30];    int k=0; int i,res;
+		     fstream fil ("book.bat",ios::in|ios::binary);
+		     cout<<endl<<endl;
+		     cout<<"             "<<"SEARCH IS ON"<<endl;
+		     cout<<"             "<<"============"<<endl<<endl;
+		     cout<<"           "<<"PLEASE ENTER YOUR NAME    ::"<<endl;
+		     cout<<"             ";gets(nam);
+		     cout<<endl;
+		     cout<<"      "<<"PLEASE WAIT"<<endl;
+
+		  while (fil)
+	  {
+		  fil.read((char*)&obj,sizeof(obj));
+		  if(fil.eof()) break;
+		  res=strcmp(nam,obj.return_name());
+		  k++;
+		  if(res==0)
+		  break;
+
+	  }; //end of while
+
+	  if(res==0)
+	  {
+			nfil.write((char*)&obj,sizeof(obj));
+			cout<<"      ";puts(nam);
+			cout<<"      "<<"HAS BOOKED A TICKET"<<endl<<endl;
+			for(i=0;i<=159;i++)
+			putch(char(186));
+			break;
+
+	  } // end of if
+	  else
+	  {
+		  cout<<"        ";puts(nam);
+		  cout<<"        "<<"HAS NOT BOOKED A TICKET"<<endl<<endl;
+		  for(i=0;i<=159;i++)
+		  putch(char(186));
+		  break;
+	  } //end of else
+		    ;
+
+	      } //end of case (3)
+
+
+case 4:{
+
+			 clrscr();
+			 table();
+			 fstream fil ("book.bat",ios::in|ios::binary);
+			  while(fil)
+				{
+					fil.read((char*)&obj,sizeof(obj));
+					if(fil.eof())
+							break;
+					obj.output();
+					f++;
+				};
+
+				fil.close();
+				break;
+			} //end of case(4)
+	  case 5:    {
+		     //port();
+		     clrscr();
+		     char nam[30];    int k=0; int i,res;
+		     fstream fil ("book.bat",ios::in|ios::binary);
+		     fstream nfil("cancel.bat",ios::out|ios::binary|ios::app);
+		     cout<<endl<<endl;
+		     cout<<"             "<<"SEARCH IS ON"<<endl;
+		     cout<<"             "<<"============"<<endl<<endl;
+		     cout<<"           "<<"PLEASE ENTER YOUR NAME    ::"<<endl;
+		     cout<<"             ";gets(nam);
+		     cout<<endl;
+		     cout<<"      "<<"PLEASE WAIT"<<endl;
+
+		  while (fil)
+	  {
+		  fil.read((char*)&obj,sizeof(obj));
+		  if(fil.eof()) break;
+		  res=strcmp(nam,obj.return_name());
+		  k++;
+		  if(res==0)
+		  break;
+
+	  }; //end of while
+
+	  if(res==0)
+	  {
+			nfil.write((char*)&obj,sizeof(obj));
+			cout<<"      ";puts(nam);
+			cout<<"      "<<"HAS CANCELLED A TICKET"<<endl<<endl;
+			for(i=0;i<=159;i++)
+			putch(char(186));
+			break;
+
+	  } // end of if
+	 } //end of case (5)
+
+	case 6:
+		   {
+			// port();
+			 clrscr();
+			 table();
+			 fstream nfil ("cancel.bat",ios::in|ios::binary);
+			  while(nfil)
+				{
+				       nfil.read((char*)&obj,sizeof(obj));
+					if(nfil.eof())
+							break;
+					obj.output();
+					f++;
+				};
+
+			       nfil.close();
+				break;
+			} //end of case(6)
+	 case 7:{exit(0);}
+		}//end of switch
+		gotoxy(20,20);
+		cout<<"             ";
+		cout<<"DO YOU WANT TO CONTINUE (Y/N)::";
+		cin>>cha;
+	}  //end of do
+	while(cha=='y'||cha=='Y');
+       //	end();
+	exit(0);
+	getch();
+}
+//****************************************************************
+//			Functions Definations
+//****************************************************************
+ void ichos(void)
+{
+  cout<<endl;        cout<<"    "<<"PLEASE CHOOSE YOUR DESTINATION"<<endl<<endl;
+  cout<<"========================================================================"<<endl;
+  cout<<"    "<<"S.NO"<<"   ";putch(char(186));cout<<"   "<<"   PLACE   "<<"    ";putch(char(186));cout<<"    AIRLINES    ";putch(char(186));cout<<"  TIME  ";putch(char(186));cout<<"  FARE   ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 1  "<<"   ";putch(char(186));cout<<"   "<<" SYDNEY    "<<"    ";putch(char(186));cout<<" AUSTRALIAN AIR ";putch(char(186));cout<<"  0930  ";putch(char(186));cout<<" 10000   ";putch(char(186));cout<<endl<<endl;
+
+
+  cout<<"    "<<" 2  "<<"   ";putch(char(186));cout<<"   "<<" LONDON    "<<"    ";putch(char(186));cout<<"BRITISH AIRWAYS ";putch(char(186));cout<<"  2210  ";putch(char(186));cout<<" 20000   ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 3  "<<"   ";putch(char(186));cout<<"   "<<" BANGKOK   "<<"    ";putch(char(186));cout<<" THAI AIRWAYS   ";putch(char(186));cout<<"  2330  ";putch(char(186));cout<<" 15000   ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 4  "<<"   ";putch(char(186));cout<<"   "<<" FRANKFURT "<<"    ";putch(char(186));cout<<"   LUFTHANSA    ";putch(char(186));cout<<"  1330  ";putch(char(186));cout<<"  8000   ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 5  "<<"   ";putch(char(186));cout<<"   "<<"   PARIS   "<<"    ";putch(char(186));cout<<"  AIR-FRANCE    ";putch(char(186));cout<<"  2300  ";putch(char(186));cout<<" 11000   ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 6  "<<"   ";putch(char(186));cout<<"   "<<"  TOKYO    "<<"    ";putch(char(186));cout<<"  JAPANESE-AIR  ";putch(char(186));cout<<"  2210  ";putch(char(186));cout<<" 15000   ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 7  "<<"   ";putch(char(186));cout<<"   "<<"  MOSCOW   "<<"    ";putch(char(186));cout<<"  AIR-INDIA     ";putch(char(186));cout<<"  1330  ";putch(char(186));cout<<"  18000  ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 8  "<<"   ";putch(char(186));cout<<"   "<<"   ROME    "<<"    ";putch(char(186));cout<<"    AIR-INDIA   ";putch(char(186));cout<<"  1740  ";putch(char(186));cout<<"  28000  ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 9  "<<"   ";putch(char(186));cout<<"   "<<" NEW-YORK  "<<"    ";putch(char(186));cout<<" UNITED-AIRWAYS ";putch(char(186));cout<<"  2234  ";putch(char(186));cout<<" 18000   ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 10 "<<"   ";putch(char(186));cout<<"   "<<" ATLANTA   "<<"    ";putch(char(186));cout<<" UNITED-AIRWAYS ";putch(char(186));cout<<"  1150  ";putch(char(186));cout<<" 15000   ";putch(char(186));cout<<endl<<endl;
+  cout<<"================================================================================";
+  cout<<"      "<<"PRESS ANY KEY TO CONTINUE"; getch();
+} //end of ichos();
+
+void wel()
+{
+	clrscr();
+		gotoxy(25,10);
+		cout<<"\n\n\t\t\t\a\aWELCOME TO AIRLINE RESERVATION";
+		cout<<"\n\n\t\t\t\tBy:Ashwani Kumar";
+		cout<<"\n\n\t\t\t\t\tXII-A";
+		gotoxy(35,24);
+		for(int as=0;as<7;as++)
+			{
+			delay(500);
+			cout<<".";
+			}
+			clrscr();
+			gotoxy(30,20);
+		  cprintf("\nPress any key to continue");
+
+  getch();
+  } //end of wel();
+
+void option(void)
+  {     clrscr();
+  gotoxy(30,12);
+		gotoxy(29,9) ;
+		cprintf("AIR TICKET RESERVATION") ;
+	  gotoxy(29,10) ;
+		cprintf("~~~~~~~~~~~~~~~~~~~~~~~~") ;
+	gotoxy(29,11);
+	 cprintf("\n1)BOOK DOMESTIC FLIGHT");
+	  gotoxy(29,12);
+	  cprintf("\n2)BOOK INTERNATIONAL FLIGHT");
+	  gotoxy(29,13);
+		  cprintf("\n3)CONFIRM YOUR TICKET");
+		gotoxy(29,14);
+			cprintf("\n4)PASSENGER DETAILS");
+		gotoxy(29,15);
+			cprintf("\n5)CANCEL YOUR TICKET");
+		gotoxy(29,16);
+			cprintf("\n6)CANCELLED TICKET");
+		gotoxy(29,17);
+		cprintf("\n7)Exit");
+
+} //end of option();
+
+ int cho()
+	 {
+
+	   gotoxy(30,20);
+	   cprintf("PLEASE ENTER YOUR CHOICE NOW:");
+	   cin>>ch;
+	  return ch;
+	 } //end of cho();
+
+   void table(void)
+ {
+   cout<<endl<<endl<<"                              AIRPORT RECORDS                "<<endl<<endl;
+   cout<<setw(15)<<"NAME"<<setw(15)<<"DESTINATION"<<"     "<<setw(8)<<" DATE"<<setw(12)<<"     FLIGHT.NO"<<setw(6)<<"TIME"<<endl;
+   cout<<"------------------------------------------------------------------------------"<<endl<<endl;
+  }
+
+
+ void dchos(void)
+ {
+  cout<<endl;        cout<<"    "<<"PLEASE CHOOSE YOUR DESTINATION"<<endl<<endl;
+  cout<<"========================================================================"<<endl;
+  cout<<"    "<<"S.NO"<<"   ";putch(char(186));cout<<"   "<<" PLACE     "<<"    ";putch(char(186));cout<<"    AIRLINES    ";putch(char(186));cout<<"  TIME  ";putch(char(186));cout<<"  FARE   ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 1  "<<"   ";putch(char(186));cout<<"   "<<" DELHI     "<<"     ";putch(char(186));cout<<"INDIA-AIRLINES ";putch(char(186));cout<<"  0930  ";putch(char(186));cout<<" 10000   ";putch(char(186));cout<<endl<<endl;
+
+
+  cout<<"    "<<" 2  "<<"   ";putch(char(186));cout<<"   "<<" MUMBAI    "<<"    ";putch(char(186));cout<<"    KINGDOM     ";putch(char(186));cout<<"  2210  ";putch(char(186));cout<<" 20000   ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 3  "<<"   ";putch(char(186));cout<<"   "<<" CHENNAI   "<<"    ";putch(char(186));cout<<"   FRRANFIN     ";putch(char(186));cout<<"  2330  ";putch(char(186));cout<<" 15000   ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 4  "<<"   ";putch(char(186));cout<<"   "<<" KOLKATA   "<<"    ";putch(char(186));cout<<" INDIA-AIRLINES ";putch(char(186));cout<<"  1330  ";putch(char(186));cout<<"  8000   ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 5  "<<"   ";putch(char(186));cout<<"   "<<" SHIMLA    "<<"    ";putch(char(186));cout<<"     DECCAN     ";putch(char(186));cout<<"  2300  ";putch(char(186));cout<<" 11000   ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 6  "<<"   ";putch(char(186));cout<<"   "<<" JAMMU     "<<"    ";putch(char(186));cout<<" INDIA-AIRLINES ";putch(char(186));cout<<"  2210  ";putch(char(186));cout<<" 15000   ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 7  "<<"   ";putch(char(186));cout<<"   "<<" BANGALORE "<<"    ";putch(char(186));cout<<"    KINGDOM     ";putch(char(186));cout<<"  1330  ";putch(char(186));cout<<"  18000  ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 8  "<<"   ";putch(char(186));cout<<"   "<<" GOA       "<<"    ";putch(char(186));cout<<"   JET-AIRWAYS  ";putch(char(186));cout<<"  1740  ";putch(char(186));cout<<"  28000  ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 9  "<<"   ";putch(char(186));cout<<"   "<<" DISPUR    "<<"    ";putch(char(186));cout<<" INDIA-AIRLINES ";putch(char(186));cout<<"  2234  ";putch(char(186));cout<<" 18000   ";putch(char(186));cout<<endl<<endl;
+
+  cout<<"    "<<" 10 "<<"   ";putch(char(186));cout<<"   "<<" BHOPAL    "<<"    ";putch(char(186));cout<<"     DECCAN     ";putch(char(186));cout<<"  1150  ";putch(char(186));cout<<" 15000   ";putch(char(186));cout<<endl<<endl;
+  cout<<"================================================================================";
+  cout<<"      "<<"PRESS ANY KEY TO CONTINUE"; getch();
+} //end of dchos();
+
+//*******************************************************************
+//			Functions END
+//*******************************************************************
+
+//*******************************************************************
+//		        Program END
+//*******************************************************************
